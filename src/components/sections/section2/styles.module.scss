@@ -1,0 +1,94 @@
+@use '@/utils/styles/colors.scss';
+@use '@/utils/styles/screen.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+  .content {
+    @include screen.main-width;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 350px;
+    gap: 20px;
+    .left {
+      display: flex;
+      flex-direction: column;
+      .line {
+        width: 100px;
+        height: 3px;
+        background-color: colors.$sky-600;
+        margin-bottom: 20px;
+      }
+      .text {
+        font-size: 40px;
+        font-weight: 700;
+        font-family: 'Montserrat';
+        color: colors.$slate-600;
+        max-width: 600px;
+      }
+      .textPointContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        .textPointItem {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .textPoint {
+            font-size: 15px;
+            font-weight: 400;
+            font-family: 'Montserrat';
+            color: colors.$slate-600;
+            .bold {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 50%;
+      .image {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
+
+.check {
+  background-color: colors.$green-600;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border-radius: 4px;
+  aspect-ratio: 1/1;
+  padding: 3px;
+  > svg {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    stroke-width: 3;
+  }
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  width: 100%;
+  .content {
+    @include screen.main-width;
+  }
+}

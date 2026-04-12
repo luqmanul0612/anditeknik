@@ -1,0 +1,82 @@
+@use '@/utils/styles/colors.scss';
+@use '@/utils/styles/screen.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .top {
+    display: flex;
+    justify-content: center;
+    background-color: colors.$slate-800;
+    width: 100%;
+    > div {
+      display: flex;
+      min-height: 35px;
+      justify-content: flex-end;
+      @include screen.main-width;
+      .whatsapp {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #fff;
+        .bold {
+          font-weight: 600;
+        }
+        .icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 100%;
+    > div {
+      @include screen.main-width;
+      min-height: 70px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .companyLogo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .logo {
+          width: 45px;
+          height: 45px;
+        }
+        .companyName {
+          display: flex;
+          flex-direction: column;
+          .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: colors.$slate-800;
+          }
+          .desc {
+            font-size: 14px;
+            font-weight: 400;
+            color: colors.$sky-600;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  .item {
+    display: flex;
+    color: colors.$slate-700;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
