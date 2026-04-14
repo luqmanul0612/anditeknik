@@ -7,7 +7,7 @@
   align-items: center;
   position: relative;
   width: 100%;
-  min-height: calc(100dvh - 105px);
+  min-height: 100dvh;
   .content {
     @include screen.main-width;
     position: relative;
@@ -17,9 +17,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: calc(100dvh - 105px);
+    min-height: 100dvh;
     gap: 10px;
-    transform: translateY(-50px);
     .textContainer {
       display: flex;
       flex-direction: column;

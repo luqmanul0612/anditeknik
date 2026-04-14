@@ -8,6 +8,7 @@
   position: relative;
   width: 100%;
   padding: 40px 0;
+  background-color: #fff;
   .content {
     @include screen.main-width;
     width: 100%;
@@ -67,6 +68,9 @@
 }
 
 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: colors.$green-600;
   width: 20px;
   min-width: 20px;
@@ -86,7 +90,7 @@
 .slider {
   display: flex;
   justify-content: center;
-  background-color: #000;
+  background-color: #eceef0;
   width: 100%;
   .content {
     @include screen.main-width;
