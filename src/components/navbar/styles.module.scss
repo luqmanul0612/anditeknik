@@ -8,37 +8,12 @@
   position: fixed;
   z-index: 99999;
   width: 100dvw;
-  .top {
-    display: flex;
-    justify-content: center;
-    background-color: colors.$slate-800;
-    width: 100%;
-    > div {
-      display: flex;
-      min-height: 35px;
-      justify-content: flex-end;
-      @include screen.main-width;
-      .whatsapp {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: #fff;
-        .bold {
-          font-weight: 600;
-        }
-        .icon {
-          width: 18px;
-          height: 18px;
-        }
-      }
-    }
-  }
   .content {
     display: flex;
     justify-content: center;
     background-color: #fff;
     width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     > div {
       @include screen.main-width;
       min-height: 70px;
@@ -57,14 +32,17 @@
         .companyName {
           display: flex;
           flex-direction: column;
+          gap: 2px;
           .name {
             font-size: 20px;
             font-weight: 700;
             color: colors.$slate-800;
+            line-height: 1;
           }
           .desc {
             font-size: 14px;
             font-weight: 400;
+            line-height: 1;
             color: colors.$sky-600;
           }
         }
@@ -73,13 +51,36 @@
   }
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 .menu {
   display: flex;
   gap: 20px;
   .item {
     display: flex;
     color: colors.$slate-700;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
+  }
+}
+
+.button {
+  outline: none;
+  border: none;
+  background-color: colors.$sky-600;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 20px;
+  height: 45px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: colors.$sky-700;
   }
 }

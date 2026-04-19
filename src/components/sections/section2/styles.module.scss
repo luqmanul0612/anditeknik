@@ -23,7 +23,7 @@
         width: 100px;
         height: 3px;
         background-color: colors.$sky-600;
-        margin-bottom: 20px;
+        margin-top: 10px;
       }
       .text {
         font-size: 40px;
@@ -41,14 +41,14 @@
           display: flex;
           align-items: center;
           gap: 10px;
-          .textPoint {
-            font-size: 15px;
-            font-weight: 400;
-            font-family: 'Montserrat';
-            color: colors.$slate-600;
-            .bold {
-              font-weight: 700;
-            }
+        }
+        .textBody {
+          font-size: 15px;
+          font-weight: 400;
+          font-family: 'Montserrat';
+          color: colors.$slate-600;
+          .bold {
+            font-weight: 700;
           }
         }
       }
@@ -94,5 +94,47 @@
   width: 100%;
   .content {
     @include screen.main-width;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+  .cards {
+    @include screen.main-width;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 40px 0;
+    .card {
+      display: flex;
+      min-height: 220px;
+      background-color: colors.$slate-50;
+      gap: 10px;
+      .image {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1/1;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        .title {
+          font-size: 18px;
+          font-weight: 500;
+          color: colors.$slate-800;
+          font-family: 'Montserrat';
+        }
+        .desc {
+          font-size: 14px;
+          font-weight: 300;
+          color: colors.$slate-800;
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }

@@ -8,6 +8,16 @@
   position: relative;
   width: 100%;
   min-height: 100dvh;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left, #00000000, #1e64a555, #1e64a59f);
+    z-index: 1;
+  }
   .content {
     @include screen.main-width;
     position: relative;
@@ -26,9 +36,7 @@
       .titleContainer,
       .descContainer {
         display: flex;
-        padding: 10px 20px;
         width: fit-content;
-        background-color: #000000b1;
       }
       .title {
         font-size: 32px;
@@ -49,7 +57,7 @@
 .button {
   outline: none;
   border: none;
-  background-color: colors.$sky-600;
+  background-color: colors.$red-600;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -60,6 +68,6 @@
   margin-top: 20px;
   transition: all 0.3s ease-in-out;
   &:hover {
-    background-color: colors.$sky-700;
+    background-color: colors.$red-700;
   }
 }

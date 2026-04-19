@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keunggulan Hamdan Jaya Teknik</title>
+    <style>
+        /* --- Reset & Layout Dasar --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1.main-title {
+            color: #0d47a1;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* --- Gaya Kartu UI --- */
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Warna Aksen untuk Tiap Kartu */
+        .card-1 { border-bottom-color: #1976d2; } /* Biru */
+        .card-2 { border-bottom-color: #388e3c; } /* Hijau */
+        .card-3 { border-bottom-color: #fbc02d; } /* Kuning */
+        .card-4 { border-bottom-color: #00acc1; } /* Cyan */
+
+        /* --- Header Kartu (Ilustrasi SVG) --- */
+        .card-header {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Pewarnaan Background Header */
+        .card-1 .card-header { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .card-2 .card-header { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+        .card-3 .card-header { background: linear-gradient(135deg, #fffde7, #fff9c4); }
+        .card-4 .card-header { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); }
+
+        .card-header svg {
+            width: 100%;
+            height: 100%;
+            max-width: 150px;
+        }
+
+        /* --- Konten Kartu (Teks) --- */
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #333;
+        }
+
+        /* Pewarnaan Teks Judul sesuai Aksen */
+        .card-1 .card-title { color: #0d47a1; }
+        .card-2 .card-title { color: #1b5e20; }
+        .card-3 .card-title { color: #f57f17; }
+        .card-4 .card-title { color: #006064; }
+
+        .card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Responsive - stack cards on small screens */
+        @media (max-width: 600px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main-title">Mengapa Memilih Hamdan Jaya Teknik?</h1>
+
+    <div class="card-container">
+
+        <div class="card card-1">
+            <div class="card-header">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#1976d2" fill-opacity="0.1"/>
+                    <rect x="25" y="25" width="50" height="20" rx="2" fill="#90caf9"/>
+                    <rect x="30" y="30" width="40" height="10" rx="1" fill="#fff"/>
+                    <rect x="32" y="33" width="36" height="4" rx="0.5" fill="#e3f2fd"/>
+                    <circle cx="50" cy="65" r="10" fill="#1565c0"/>
+                    <path d="M35 85 C 35 75, 65 75, 65 85 Z" fill="#1565c0"/>
+                    <path d="M48 68 L52 68 L51 75 L49 75 Z" fill="#fff"/> <circle cx="51" cy="68" r="1" fill="#fff"/>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">1. Teknisi Profesional dan Berpengalaman</h2>
+                <p class="card-text">
+                    Tim kami adalah para ahli AC senior yang terlatih dan berpengalaman, siap menangani segala jenis dan ukuran AC. Dengan pengetahuan mendalam, mereka mampu menyelesaikan masalah AC Anda dengan cepat, efisien, dan hasil optimal.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-2">
+            <div class="card-header">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#388e3c" fill-opacity="0.1"/>
+                    <circle cx="50" cy="55" r="25" fill="#fff" stroke="#2e7d32" stroke-width="3"/>
+                    <circle cx="50" cy="55" r="2" fill="#2e7d32"/>
+                    <path d="M50 55 L50 38" stroke="#2e7d32" stroke-width="2" stroke-linecap="round"/> <path d="M50 55 L62 55" stroke="#a5d6a7" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="46" y="25" width="8" height="5" rx="1" fill="#2e7d32"/> <path d="M15 40 L35 40" stroke="#a5d6a7" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M10 50 L30 50" stroke="#a5d6a7" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M15 60 L35 60" stroke="#a5d6a7" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">2. Pelayanan Cepat dan Tepat Waktu</h2>
+                <p class="card-text">
+                    Kami paham betapa berharganya waktu Anda! Dengan pelayanan yang cepat dan selalu tepat waktu, tim kami memastikan AC Anda kembali berfungsi normal dalam sekejap.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-3">
+            <div class="card-header">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#fbc02d" fill-opacity="0.1"/>
+                    <path d="M50 15 L20 30 V60 C20 75, 50 85, 50 85 C50 85, 80 75, 80 60 V30 Z" fill="#fff" stroke="#f9a825" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#f9a825" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25 20 L27 24 L31 25 L28 28 L29 32 L25 30 L21 32 L22 28 L19 25 L23 24 Z" fill="#fffde7"/>
+                    <path d="M75 70 L77 74 L81 75 L78 78 L79 82 L75 80 L71 82 L72 78 L69 75 L73 74 Z" fill="#fffde7"/>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">3. Bergaransi & Terjamin</h2>
+                <p class="card-text">
+                    Setiap layanan dari Hamdan Jaya Teknik dilengkapi garansi resmi dan jaminan keamanan, memastikan Anda mendapatkan nilai terbaik dan ketenangan pikiran.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-4">
+            <div class="card-header">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#00acc1" fill-opacity="0.1"/>
+                    <rect x="30" y="25" width="40" height="50" rx="3" fill="#fff" stroke="#0097a7" stroke-width="3"/>
+                    <rect x="35" y="30" width="30" height="12" rx="1" fill="#e0f7fa"/> <circle cx="38" cy="48" r="2.5" fill="#80deea"/> <circle cx="45" cy="48" r="2.5" fill="#80deea"/> <circle cx="52" cy="48" r="2.5" fill="#80deea"/>
+                    <circle cx="38" cy="55" r="2.5" fill="#80deea"/> <circle cx="45" cy="55" r="2.5" fill="#80deea"/> <circle cx="52" cy="48" r="2.5" fill="#80deea"/>
+                    <rect x="58" y="48" width="7" height="12" rx="1" fill="#0097a7"/> <circle cx="70" cy="70" r="10" fill="#fff9c4" stroke="#fbc02d" stroke-width="2"/>
+                    <text x="70" y="74" text-anchor="middle" font-size="10" fill="#fbc02d" font-weight="bold">Rp</text>
+                    <circle cx="60" cy="75" r="8" fill="#fff9c4" stroke="#fbc02d" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">4. Transparansi Harga</h2>
+                <p class="card-text">
+                    Kami menyediakan estimasi biaya yang transparan sebelum memulai pekerjaan, sehingga Anda terbebas dari kejutan tak terduga. Kejelasan biaya adalah prioritas kami.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
