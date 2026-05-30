@@ -1,3 +1,4 @@
+'use client';
 import cn from './styles.module.scss';
 import ImageSlider from '@/components/image-slider';
 import Changhong from '@/assets/images/changhong.svg';
@@ -15,6 +16,8 @@ import technicianIllustration from '@/assets/images/technician-illustration.webp
 import deliverIllustration from '@/assets/images/deliver-illustration.webp';
 import priceIllustration from '@/assets/images/price-illustration.webp';
 import warrantyIllustration from '@/assets/images/warranty-illustration.webp';
+import { motion } from 'framer-motion';
+import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, scaleIn, viewportOptions } from '@/utils/animations';
 
 const companyImages = [Changhong, Daikin, Sharp, Samsung, Toshiba, Panasonic, Lg, Polytron];
 const cardsData = [
@@ -43,45 +46,42 @@ const cardsData = [
 const Section2 = () => {
   return (
     <>
-      <div className={cn.main}>
+      <div className={cn.main} id="tentang">
         <div className={cn.content}>
-          <div className={cn.left}>
+          <motion.div className={cn.left} variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportOptions}>
             <p className={cn.text}>Kenapa Pilih Andi Teknik?</p>
             <div className={cn.line} />
-            <div className={cn.textPointContainer}>
-              <p className={cn.textBody}>
+            <motion.div
+              className={cn.textPointContainer}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOptions}
+            >
+              <motion.p className={cn.textBody} variants={fadeInUp}>
                 Kami adalah <span className={cn.bold}>jasa service AC panggilan terbaik di Jabodetabek,</span> dipercaya masyarakat karena:
-              </p>
-              <div className={cn.textPointItem}>
-                <Check />
-                <p className={cn.textBody}>
-                  <span className={cn.bold}>Wilayah Layanan</span> di setiap kota Jabodetabek untuk respons cepat.
-                </p>
-              </div>
-              <div className={cn.textPointItem}>
-                <Check />
-                <p className={cn.textBody}>
-                  <span className={cn.bold}>Teknisi Bersertifikat</span>, berpengalaman, dan profesional.
-                </p>
-              </div>
-              <div className={cn.textPointItem}>
-                <Check />
-                <p className={cn.textBody}>
-                  <span className={cn.bold}>Transparansi Harga</span> dengan garansi kepuasan.
-                </p>
-              </div>
-              <div className={cn.textPointItem}>
-                <Check />
-                <p className={cn.textBody}>
-                  <span className={cn.bold}>Biaya Terjangkau</span> dengan sparepart berkualitas sesuai merek AC.
-                </p>
-              </div>
-              <p className={cn.textBody}>
+              </motion.p>
+              {[
+                { bold: 'Wilayah Layanan', text: ' di setiap kota Jabodetabek untuk respons cepat.' },
+                { bold: 'Teknisi Bersertifikat', text: ', berpengalaman, dan profesional.' },
+                { bold: 'Transparansi Harga', text: ' dengan garansi kepuasan.' },
+                { bold: 'Biaya Terjangkau', text: ' dengan sparepart berkualitas sesuai merek AC.' },
+              ].map((item, i) => (
+                <motion.div key={i} className={cn.textPointItem} variants={fadeInUp}>
+                  <Check />
+                  <p className={cn.textBody}>
+                    <span className={cn.bold}>{item.bold}</span>
+                    {item.text}
+                  </p>
+                </motion.div>
+              ))}
+              <motion.p className={cn.textBody} variants={fadeInUp}>
                 Percayakan kenyamanan AC Anda kepada kami! <span className={cn.bold}>Hubungi sekarang</span> untuk layanan terbaik!
-              </p>
-            </div>
-          </div>
-          <div className={cn.right}>
+              </motion.p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div className={cn.right} variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOptions}>
             <div className={cn.image}>
               <Image
                 src={image2}
@@ -91,13 +91,14 @@ const Section2 = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
+
       <div className={cn.cardContainer}>
-        <div className={cn.cards}>
+        <motion.div className={cn.cards} variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOptions}>
           {cardsData.map((card, i) => (
-            <div key={i} className={cn.card}>
+            <motion.div key={i} className={cn.card} variants={scaleIn} whileHover={{ y: -6, transition: { duration: 0.25 } }}>
               <div className={cn.image}>
                 <Image src={card.image} alt="image" fill style={{ objectFit: 'cover', objectPosition: 'center' }} sizes="250px" />
               </div>
@@ -105,15 +106,22 @@ const Section2 = () => {
                 <p className={cn.title}>{card.title}</p>
                 <p className={cn.desc}>{card.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-      <div className={cn.slider}>
+
+      <motion.div
+        className={cn.slider}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={viewportOptions}
+        transition={{ duration: 0.8 }}
+      >
         <div className={cn.content}>
           <ImageSlider imgs={[...companyImages, ...companyImages]} />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -7,18 +7,25 @@
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 40px 0;
+  padding: 60px 0;
   background-color: #fff;
+  overflow: hidden;
   .content {
     @include screen.main-width;
+    padding: 0 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    min-height: 350px;
-    gap: 20px;
+    gap: 40px;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      min-height: 350px;
+    }
     .left {
       display: flex;
       flex-direction: column;
+      flex: 1;
       .line {
         width: 100px;
         height: 3px;
@@ -26,11 +33,17 @@
         margin-top: 10px;
       }
       .text {
-        font-size: 40px;
+        font-size: 28px;
         font-weight: 700;
         font-family: 'Montserrat';
         color: colors.$slate-600;
         max-width: 600px;
+        @media (min-width: 768px) {
+          font-size: 36px;
+        }
+        @media (min-width: 1024px) {
+          font-size: 40px;
+        }
       }
       .textPointContainer {
         display: flex;
@@ -43,10 +56,13 @@
           gap: 10px;
         }
         .textBody {
-          font-size: 15px;
+          font-size: 14px;
           font-weight: 400;
           font-family: 'Montserrat';
           color: colors.$slate-600;
+          @media (min-width: 768px) {
+            font-size: 15px;
+          }
           .bold {
             font-weight: 700;
           }
@@ -55,13 +71,23 @@
     }
     .right {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
-      width: 50%;
+      width: 100%;
+      @media (min-width: 768px) {
+        width: 45%;
+        justify-content: flex-end;
+      }
       .image {
         position: relative;
-        height: 100%;
+        width: 100%;
+        max-width: 400px;
         aspect-ratio: 1/1;
+        @media (min-width: 768px) {
+          height: 100%;
+          max-width: none;
+          width: 100%;
+        }
       }
     }
   }
@@ -101,38 +127,64 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #fff;
+  background-color: colors.$slate-50;
   .cards {
     @include screen.main-width;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 20px;
-    padding: 40px 0;
+    gap: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .card {
       display: flex;
-      min-height: 220px;
-      background-color: colors.$slate-50;
-      gap: 10px;
+      flex-direction: column;
+      background-color: #fff;
+      border: 1px solid colors.$slate-100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+      &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+      @media (min-width: 480px) {
+        flex-direction: row;
+        min-height: 200px;
+      }
       .image {
         position: relative;
-        height: 100%;
-        aspect-ratio: 1/1;
+        width: 100%;
+        aspect-ratio: 4/3;
+        @media (min-width: 480px) {
+          width: 180px;
+          min-width: 180px;
+          aspect-ratio: auto;
+          height: auto;
+        }
       }
       .content {
         display: flex;
         flex-direction: column;
         padding: 20px;
         .title {
-          font-size: 18px;
-          font-weight: 500;
+          font-size: 16px;
+          font-weight: 600;
           color: colors.$slate-800;
           font-family: 'Montserrat';
         }
         .desc {
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 300;
-          color: colors.$slate-800;
+          color: colors.$slate-600;
           margin-top: 10px;
+          line-height: 1.6;
         }
       }
     }

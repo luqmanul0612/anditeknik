@@ -1,0 +1,100 @@
+@use '@/utils/styles/colors.scss';
+@use '@/utils/styles/screen.scss';
+
+.main {
+  background-color: colors.$slate-900;
+  width: 100%;
+}
+
+.inner {
+  @include screen.main-width;
+  padding: 48px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  margin: 0 auto;
+  @media (min-width: 540px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.brand {
+  .logoRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .logo {
+    width: 42px;
+    height: 42px;
+  }
+  .name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+  }
+  .tagline {
+    font-size: 12px;
+    color: colors.$sky-400;
+    margin: 3px 0 0;
+  }
+  .brandDesc {
+    font-size: 13px;
+    color: colors.$slate-400;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+}
+
+.linksGroup {
+  .groupTitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      font-size: 13px;
+      color: colors.$slate-400;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:hover {
+        color: colors.$sky-400;
+      }
+    }
+  }
+}
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 12px;
+    color: colors.$slate-500;
+    margin: 0;
+  }
+}

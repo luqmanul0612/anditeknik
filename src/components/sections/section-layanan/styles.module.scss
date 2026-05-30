@@ -1,0 +1,148 @@
+@use '@/utils/styles/colors.scss';
+@use '@/utils/styles/screen.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f8fafc;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 600px;
+  .subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: colors.$sky-600;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    color: colors.$slate-800;
+    margin: 0;
+    @media (min-width: 640px) {
+      font-size: 36px;
+    }
+  }
+  .line {
+    width: 60px;
+    height: 3px;
+    background-color: colors.$sky-600;
+    margin: 16px auto;
+  }
+  .desc {
+    font-size: 14px;
+    color: colors.$slate-500;
+    line-height: 1.7;
+    @media (min-width: 640px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.grid {
+  @include screen.main-width;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  @media (min-width: 540px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  will-change: transform, box-shadow;
+  transition: box-shadow 0.25s ease;
+  background-color: #fff;
+  border: 1px solid colors.$slate-100;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s;
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: colors.$slate-800;
+  font-family: 'Montserrat';
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: colors.$slate-500;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.cta {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  .ctaText {
+    font-size: 15px;
+    color: colors.$slate-500;
+  }
+  .ctaButton {
+    background-color: #25d366;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    &:hover {
+      background-color: #1ebe5d;
+    }
+  }
+}
