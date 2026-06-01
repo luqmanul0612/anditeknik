@@ -2,10 +2,11 @@
 import { motion } from 'framer-motion';
 import WhatsappIcon from '@/assets/icons/whatsapp-icon.svg';
 import styles from './styles.module.scss';
+import { whatsappNumber } from '@/utils/constants';
 
 const FloatingWA = () => {
   const openWhatsapp = () => {
-    window.open('https://wa.me/6281234567890?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC', '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC`, '_blank');
   };
 
   return (

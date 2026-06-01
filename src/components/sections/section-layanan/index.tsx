@@ -4,6 +4,7 @@ import cn from './styles.module.scss';
 import { WrenchScrewdriverIcon, SparklesIcon, ArrowPathIcon, BoltIcon, CogIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, scaleIn, viewportOptions } from '@/utils/animations';
+import { whatsappNumber } from '@/utils/constants';
 
 const services = [
   {
@@ -58,7 +59,7 @@ const services = [
 
 const SectionLayanan = () => {
   const openWhatsapp = () => {
-    window.open('https://wa.me/6281234567890?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC', '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC`, '_blank');
   };
 
   return (

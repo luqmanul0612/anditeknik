@@ -3,9 +3,10 @@ import Image from 'next/image';
 import mainAsset from '@/assets/images/main-banner.webp';
 import cn from './styles.module.scss';
 import { motion } from 'framer-motion';
+import { whatsappNumber } from '@/utils/constants';
 
 const openWhatsapp = () => {
-  window.open('https://wa.me/6281234567890?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC', '_blank');
+  window.open(`https://wa.me/${whatsappNumber}?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC`, '_blank');
 };
 
 const Section1 = () => {
@@ -56,20 +57,10 @@ const Section1 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
           >
-            <motion.button
-              className={cn.button}
-              onClick={openWhatsapp}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-            >
+            <motion.button className={cn.button} onClick={openWhatsapp} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               PESAN SEKARANG
             </motion.button>
-            <motion.button
-              className={cn.buttonOutline}
-              onClick={scrollToLayanan}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-            >
+            <motion.button className={cn.buttonOutline} onClick={scrollToLayanan} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               LIHAT LAYANAN
             </motion.button>
           </motion.div>

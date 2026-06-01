@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import cn from './styles.module.scss';
 import Logo from '@/assets/logo-at.svg';
 import { motion, AnimatePresence } from 'framer-motion';
+import { whatsappNumber } from '@/utils/constants';
 
 const menuItems = [
   { label: 'HOME', anchor: '#home' },
@@ -32,7 +33,7 @@ const Navbar = () => {
   };
 
   const openWhatsapp = () => {
-    window.open('https://wa.me/6281234567890?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC', '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=Halo%20Andi%20Teknik%2C%20saya%20ingin%20memesan%20layanan%20AC`, '_blank');
   };
 
   return (
